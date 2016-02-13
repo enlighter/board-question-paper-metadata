@@ -29,7 +29,7 @@ class metadata:
 		self._xml_wrapper_head = 'E.dublin_core('
 		self._xml_wrapper_tail = ' schema="dc")'
 		self._xml_element_head = 'E.dcvalue('
-		self._xml_element_tail = ' language="en")'
+		self._xml_element_tail = ' )' #language="en")'
 		self._xml_body = ''
 		self.xml = ''
 
@@ -38,15 +38,17 @@ class metadata:
 		if body:
 			ret += body
 		ret += self._xml_wrapper_tail
-		#print("whole xml structure:")
-		#print(ret)
+		#DEBUG
+		print("whole xml structure:")
+		print(ret)
 		return ret
 
 	def _append_element_(self, args=''):
 		if self._xml_body:
 			self._xml_body += ','
-		self._xml_body += self._xml_element_head + args + self._xml_element_tail
-		#print(self._xml_body)
+		self._xml_body += self._xml_element_head + args + self._xml_element_tail + ','
+		#DEBUG
+		print(self._xml_body)
 
 	def _create_xml_(self):
 		self.xml = eval(self._xml_bind_(self._xml_body))
@@ -92,4 +94,5 @@ def get_files(directory_path):
 #get_files(path)
 
 xml = metadata()
+xml._append_element_('test="ab"')
 pprint( xml._create_xml_() )
