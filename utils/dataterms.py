@@ -3,7 +3,20 @@
 class dc_elems:
     def __init__(self):
         print("Creating new dc instance")
-        self.dublin_core_elements = {'title':(),
+        self.dublin_core_elements = {}
+
+    def _fill_metadata_(self):
+        pass
+
+class qp_met(dc_elems):
+
+        '''
+            'contributor': {'author' : (),
+             				'illustrator' : (),
+             				'editor' : (),
+                            'none' : ()
+                                    },
+             'title':(),
              'creator': (), # creator to be merged into author in final xml
              'subject': { 'lcc' : (),
                         'ddc' : (),
@@ -14,12 +27,7 @@ class dc_elems:
                               'none' : ()
                               },
              'publisher':(),
-             'contributor': {
-             				'author' : (),
-             				'illustrator' : (),
-             				'editor' : (),
-                                    'none' : ()
-                                    },
+
              'date': {
              			'created' : (),
              			'accessioned' : (),
@@ -51,6 +59,7 @@ class dc_elems:
              'coverage':(),
              'rights':()
         }
+        '''
 
 
 #synonymous = {

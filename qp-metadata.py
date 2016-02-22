@@ -13,10 +13,10 @@
 
 import sys
 import os
-import posixpath
+#import posixpath
 import traceback
 from io import StringIO
-from pprintpp import pprint  # pretty-print
+#from pprintpp import pprint  # pretty-print
 from lxml.etree import tostring
 from lxml.builder import E
 #from extractFromEpub import metadata_extraction as epub_extraction
@@ -95,4 +95,4 @@ def get_files(directory_path):
 
 xml = metadata()
 xml._append_element_('test="ab"')
-pprint( xml._create_xml_() )
+print( xml._create_xml_() )
