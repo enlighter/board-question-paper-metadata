@@ -5,10 +5,20 @@ class dc_elems:
         print("Creating new dc instance")
         self.dublin_core_elements = {}
 
-    def _fill_metadata_(self):
+    def _init_metadata_(self):
         pass
 
-class qp_met(dc_elems):
+class qp_metadata(dc_elems):
+    def __init__(self):
+        super().__init__()
+        self._init_metadata_()
+
+    def _init_metadata_(self):
+        pass
+
+    def _add_metadata_element(self, metadata_property, value):
+        '''metadata_property has to be a string'''
+        self.dublin_core_elements[metadata_property] = value
 
         '''
             'contributor': {'author' : (),
