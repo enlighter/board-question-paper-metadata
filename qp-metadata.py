@@ -21,6 +21,7 @@ from lxml.etree import tostring
 from lxml.builder import E
 #from extractFromEpub import metadata_extraction as epub_extraction
 from utils.datahandler import xml_dump, empty_contents, logger
+from utils.dataterms import *
 
 class metadata:
 	'''metadata standard = NDL 2.0'''
@@ -86,13 +87,14 @@ def get_files(directory_path):
 		print( str(e) + "\nCouldn't log", file=sys.stdout)
 		print( str(e) + "\nCouldn't log", file=sys.stderr)
 
-# create_sip('extras/sample0.epub')
-# create_sip('extras/sample1.epub')
+
 # get_files('extras')
 
 #path = input('Which folder is your files in? ')
 #get_files(path)
 
-xml = metadata()
-xml._append_element_('test="ab"')
-print( xml._create_xml_() )
+#xml = metadata()
+#xml._append_element_('test="ab"')
+#print( xml._create_xml_() )
+
+metadata_values = qp_metadata
