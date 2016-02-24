@@ -1,9 +1,11 @@
 # This module contains the datastructures for metadata extraction
 
+from pprintpp import pprint
+
 class dc_elems:
     def __init__(self):
         print("Creating new dc instance")
-        self.dublin_core_elements = {}
+        self.metadata_elements = {}
 
     def _init_metadata_(self):
         pass
@@ -19,7 +21,10 @@ class qp_metadata(dc_elems):
 
     def _add_metadata_element(self, metadata_property, value):
         '''metadata_property has to be a string'''
-        self.dublin_core_elements[metadata_property] = value
+        self.metadata_elements[metadata_property] = value
+
+    def print_metadata_dict(self):
+        pprint(self.metadata_elements)
 
         '''
             'contributor': {'author' : (),
