@@ -9,11 +9,12 @@ class dc_elems:
         pass
 
 class qp_metadata(dc_elems):
-    def __init__(self, language="English"):
+    def __init__(self, publisher, language="English"):
         super().__init__()
-        self._init_metadata_(language)
+        self._init_metadata_(publisher, language)
 
-    def _init_metadata_(self, language):
+    def _init_metadata_(self, publisher, language):
+        self._add_metadata_element("publisher", publisher)
         self._add_metadata_element("language", language)
 
     def _add_metadata_element(self, metadata_property, value):
